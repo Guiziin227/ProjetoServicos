@@ -3,6 +3,7 @@ package dev.guiweber.backend.shared.exception;
 import dev.guiweber.backend.clientes.domain.exceptions.ClienteEmailAlreadyExistsException;
 import dev.guiweber.backend.clientes.domain.exceptions.ClienteNotFoundException;
 import dev.guiweber.backend.clientes.domain.exceptions.ClienteTelefoneAlreadyExistsException;
+import dev.guiweber.backend.servicos.domain.exceptions.ServicoNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,11 +36,12 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(status).body(response);
     }
 
-    @ExceptionHandler({ClienteNotFoundException.class})
+    @ExceptionHandler({ClienteNotFoundException.class,
+            ServicoNotFoundException.class})
     public ResponseEntity<ApiErrorResponse> handleClienteNotFound(
             Exception exception,
             HttpServletRequest request
-    ){
+    ) {
         HttpStatus status = HttpStatus.NOT_FOUND;
 
         ApiErrorResponse response = new ApiErrorResponse(
