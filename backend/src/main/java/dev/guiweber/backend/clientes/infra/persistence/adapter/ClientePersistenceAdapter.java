@@ -47,8 +47,13 @@ public class ClientePersistenceAdapter implements ClienteRepository {
     }
 
     @Override
-    public Optional<Cliente> findByName(String name) {
-        return repository.findByName(name).map(mapper::toDomain);
+    public Optional<Cliente> findByTelefone(String telefone) {
+        return repository.findByTelefone(telefone).map(mapper::toDomain);
+    }
+
+    @Override
+    public Optional<Cliente> findByNome(String nome) {
+        return repository.findByNome(nome).map(mapper::toDomain);
     }
 
     @Override

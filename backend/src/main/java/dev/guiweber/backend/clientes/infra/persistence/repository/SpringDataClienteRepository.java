@@ -10,7 +10,9 @@ public interface SpringDataClienteRepository extends JpaRepository<ClienteEntity
 
     Optional<ClienteEntity> findByEmail(String email);
 
-    Optional<ClienteEntity> findByName(String name);
+    Optional<ClienteEntity> findByNome(String nome);
+
+    Optional<ClienteEntity> findByTelefone(String telefone);
 
     boolean existsById(UUID id);
 }

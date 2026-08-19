@@ -22,7 +22,6 @@ import java.util.UUID;
 public class ClienteEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Column(name = "nome", nullable = false, length = 100)
@@ -31,6 +30,6 @@ public class ClienteEntity {
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    @Column(name = "telefone", nullable = true, length = 20)
+    @Column(name = "telefone", nullable = false, length = 20)
     private String telefone;
 }

@@ -15,7 +15,9 @@ public interface ClienteRepository {
 
     Optional<Cliente> findByEmail(String email);
 
-    Optional<Cliente> findByName(String name);
+    Optional<Cliente> findByTelefone(String telefone);
+
+    Optional<Cliente> findByNome(String nome);
 
     boolean existsById(UUID id);
 }
