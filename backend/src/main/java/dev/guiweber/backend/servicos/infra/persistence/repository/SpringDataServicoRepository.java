@@ -1,6 +1,5 @@
 package dev.guiweber.backend.servicos.infra.persistence.repository;
 
-import dev.guiweber.backend.servicos.domain.model.Servico;
 import dev.guiweber.backend.servicos.infra.persistence.entity.ServicoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,7 +10,7 @@ import java.util.UUID;
 
 public interface SpringDataServicoRepository extends JpaRepository<ServicoEntity, UUID> {
 
-    Optional<ServicoEntity> findByClienteId(UUID clientId);
+    Optional<ServicoEntity> findByClientId(UUID clientId);
 
     Optional<ServicoEntity> findByNome(String nome);
 

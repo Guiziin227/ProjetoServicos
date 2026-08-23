@@ -1,7 +1,6 @@
 package dev.guiweber.backend.servicos.domain.model;
 
 import lombok.Getter;
-import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.Objects;

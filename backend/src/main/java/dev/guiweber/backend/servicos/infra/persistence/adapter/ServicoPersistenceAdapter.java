@@ -1,6 +1,5 @@
 package dev.guiweber.backend.servicos.infra.persistence.adapter;
 
-import dev.guiweber.backend.clientes.infra.persistence.entity.ClienteEntity;
 import dev.guiweber.backend.servicos.domain.model.Servico;
 import dev.guiweber.backend.servicos.domain.repository.ServicoRepository;
 import dev.guiweber.backend.servicos.infra.persistence.entity.ServicoEntity;
@@ -38,7 +37,7 @@ public class ServicoPersistenceAdapter implements ServicoRepository {
 
     @Override
     public Optional<Servico> findByClienteId(UUID clientId) {
-        return repository.findByClienteId(clientId).map(mapper::toDomain);
+        return repository.findByClientId(clientId).map(mapper::toDomain);
     }
 
     @Override
